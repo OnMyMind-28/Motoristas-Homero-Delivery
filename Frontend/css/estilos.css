@@ -1,0 +1,95 @@
+.body-color{
+    background-color: #FFC2B2 !important;
+
+}
+
+@media (max-width: 640px){
+    /*Diseño navbar*/
+    .nav-color{
+       background-color: #FEBB22;
+    }
+    /*Color icono hamburguesa*/
+    .fa-bars{
+        color: #FFFFFF;
+        
+    }
+    /*btn icono hamburguesa*/
+    .btn-style{
+        background-color:#FEBB22;
+        border: 0;
+    }
+    /*Menu lateral izquierdo*/
+    .menu{
+        width: 200px;
+        height: 640px;
+       
+    }
+    .dropdown-item {
+        margin-top: 1rem;
+    }
+    .dropdown-menu menu{
+        margin-top: 0;
+    }
+    /*iconos menu lateral izq*/
+    .icon{
+        margin-right: 1rem;
+    }
+    /*****************************************************************************/
+    /*Div publicidad*/
+   .img-log{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+   }
+   .img-public{
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+   }
+   .img-publiH{
+    width: 135px;
+    height: 120px;
+    margin-top: 29px;
+    margin-right: 8px;
+   }
+   .div-inicio{
+    background-color: #FFFFFF;
+   }
+   .div-homer{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 340px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+   }
+   .text-color{
+    color: #FEBB22;
+    margin-left: 15px;
+    margin-top: 10px;
+  
+   }
+   .btn-inicio{
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: #FEBB22;
+    color: #FFFFFF;
+    border: 0;
+   
+    
+   }
+   /************************************************************************************************************************/
+/*Modal Inicio sesión*/
+.modal-inicio{
+    margin-top: 40%;
+  }
+  
+  .btn-inicio{
+     margin-left: 6.5rem;
+  }
+  .f-modal{
+      margin-right: 2.5rem;
+  }
+}
+
