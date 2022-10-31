@@ -3,7 +3,8 @@
 
 }
 
-@media (max-width: 640px){
+@media (max-width: 360px){
+    @media (max-height: 640px){
     /*Diseño navbar*/
     .nav-color{
        background-color: #FEBB22;
@@ -36,21 +37,36 @@
     }
     /*****************************************************************************/
     /*Div publicidad*/
+   .div-public1{
+    margin-top: 20px;
+    margin-right: 5px
+    
+   }
    .img-log{
     width: 200px;
     height: 200px;
-    margin-top: 50px;
+   
    }
    .img-public{
     width: 150px;
     height: 150px;
     border-radius: 200px;
+    
+    
    }
    .img-publiH{
     width: 135px;
     height: 120px;
     margin-top: 29px;
     margin-right: 8px;
+   }
+
+   .div-public3{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-right: 5px;
+    margin-left: 10px;
    }
    .div-inicio{
     background-color: #FFFFFF;
@@ -61,35 +77,63 @@
     width: 340px;
     height: 150px;
     margin: 10px;
+    margin-top: 0;
     display: flex;
     justify-content: space-around;
    }
-   .text-color{
+   .text-colorA{
     color: #FEBB22;
     margin-left: 15px;
     margin-top: 10px;
   
    }
-   .btn-inicio{
-    font-size: 15px;
-    border-radius: 15px;
-    background-color: #FEBB22;
-    color: #FFFFFF;
-    border: 0;
-   
-    
+   .text-colorB{
+    color: rgba(128, 0, 128, 0.685);
+    margin-left: 15px;
+    margin-top: 10px;
    }
+   .div-inicio{
+    display: flex;
+    justify-content: space-around;
+    font-size: 13px;
+    border-color:rgba(128, 0, 128, 0.685) ;
+    height: 25px;
+    width: 170px;
+    margin-left: 5px;
+    margin-right: 20px;
+   }
+   
+   .btn-inicio{
+    background-color:  #FEBB22;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+   }
+   .btn-inico:hover{
+    background-color:  #f59f00;
+    text-decoration: underline;
+   }
+   /*************************************************************************************************/
+   .footer-A{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 75px;
+    font-size: 10px;
+    color: rgba(128, 0, 128, 0.685);
+   }
+  
    /************************************************************************************************************************/
 /*Modal Inicio sesión*/
 .modal-inicio{
     margin-top: 40%;
   }
   
-  .btn-inicio{
+  .btn-ini{
      margin-left: 6.5rem;
   }
   .f-modal{
       margin-right: 2.5rem;
   }
 }
-
+}
