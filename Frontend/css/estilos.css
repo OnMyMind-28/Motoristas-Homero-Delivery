@@ -4,7 +4,7 @@
 }
 
 @media (max-width: 360px){
-    @media (max-height: 640px){
+   
     /*Diseño navbar*/
     .nav-color{
        background-color: #FEBB22;
@@ -135,5 +135,5 @@
   .f-modal{
       margin-right: 2.5rem;
   }
-}
+
 }
