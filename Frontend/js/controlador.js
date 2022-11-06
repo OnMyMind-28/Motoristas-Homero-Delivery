@@ -149,22 +149,37 @@ if(localStorageMotorista.getItem('motorista')==null){
 function modalInicio () {
         document.getElementById ('modalInicio').innerHTML += `
         <div class="modal-container ">
-    <form class="modal-form">
+    <form id="formularioInicio" class="modal-form" onsubmit="noRecargo(event)">
     <h5>Inicio de sesión</h5>
     <input id="mail" class="mt-2" type="text">
     <input id="pass" class="mt-2" type="text">
-    <button class="btn-modal" onclick="seleccionarOpcion(4)">Iniciar sesión</button>
+    <button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
     </form>
   </div>
          `
     
    
 }
+function modalRegistro () {
+    document.getElementById ('modalRegistro').innerHTML += `
+    <div class="modal-container ">
+<form id="formularioRegistro"  class="modal-form" onsubmit="noRecargo(event)">
+<h5>Registro</h5>
+<input id="mail" class="mt-2" type="text">
+<input id="pass" class="mt-2" type="text">
+<button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
+</form>
+</div>
+     `
+
+
+}
+
 /***Función para bloqueo de contenido al cambio de pagina */
-const opcionInicio = 1; // opción para inicio de sesión
-const opcionRegistro = 2; // opción para registrarse 
-const opcionPrincipal = 3; // opcion del contenido principal
-const opcionA = 4 ; //opcion para ver el contenido despues del inico de sesión
+const opcionA = 1 ; //opcion para ver el contenido despues del inico de sesión
+const opcionPrincipal = 2; // opcion del contenido principal
+const opcionInicio = 3; // opción para inicio de sesión
+const opcionRegistro = 4; // opción para registrarse 
 const opcionB = 5; //opcion para visualizar pedidos
 const opcionC = 6; //opcion para visualizar ---
 const opcionD = 7; //opcion para visualizar ---
@@ -174,39 +189,59 @@ const opcionF= 9; //opcion para visualizar ---
 
 function seleccionarOpcion(opcion){
     switch (opcion) {
-        case opcionInicio:
-          
-            document.getElementById('contenido-1').style.display = "none";
-            document.getElementById('contenido-2').style.display = "block";
-            document.getElementById('contenido-3').style.display = "none";
-            document.getElementById('contenido-4').style.display = "none";
-
-          break;
-        case opcionRegistro:
-         
-            document.getElementById('contenido-1').style.display = "none";
-            document.getElementById('contenido-2').style.display = "block";
-            document.getElementById('contenido-3').style.display = "none";
-            document.getElementById('contenido-4').style.display = "none";
-           
-          break;
-        case opcionPrincipal:
+        case opcionA:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "none";
-          break; 
-          case opcionA:
+            break;
+        
+        case opcionPrincipal:
+            document.getElementById('contenido-1').style.display = "none";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "none";
+              break; 
+           
+        case opcionInicio:
+          
+            document.getElementById('contenido-1').style.display = "none";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "block";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "none";
+          break;
+        case opcionRegistro:
+         
             document.getElementById('contenido-1').style.display = "none";
             document.getElementById('contenido-2').style.display = "none";
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "block";
-            break;
+            document.getElementById('contenido-5').style.display = "none";
            
+          break;
+        
+        case opcionB:
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            break;
            
         
     }
 }
+seleccionarOpcion();
+
+//Función para evitar el recargo por defecto del navegador al enviar formulario
+function noRecargo(event){
+    event.preventDefault();
+}
+
+
+ 
 
 //Función para ir hacia la pagina anterior
 function back(){

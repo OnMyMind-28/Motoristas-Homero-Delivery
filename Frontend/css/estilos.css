@@ -163,6 +163,21 @@
     display: flex;
     justify-content: center;
 }
+#contenido-1{
+  display: none;  
+}
+#contenido-2{
+  display: inline-block;  
+}
+#contenido-3{
+  display: none;  
+}
+#contenido-4{
+  display: none;  
+}
+#contenido-5{
+  display: none;  
+}
 
   
   
