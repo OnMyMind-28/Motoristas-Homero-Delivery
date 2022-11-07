@@ -136,7 +136,7 @@
       margin-right: 2.5rem;
   }
 
-}
+
 /****************************************/
   .modal-container {
    background-color: #FFFFFF;
@@ -163,6 +163,7 @@
     display: flex;
     justify-content: center;
 }
+/*Visibilidad de contenidos*/
 #contenido-1{
   display: none;  
 }
@@ -178,6 +179,87 @@
 #contenido-5{
   display: none;  
 }
+#contenido-6{
+    display: none;
+}
+#contenido-7{
+    display: none;
+}
+#contenido-8{
+    display: none;
+}
+#contenido-9{
+    display: none;
+}
+#contenido-10{
+    display: none;
+}
+/*DISEÑOS DE CONTENIDOS*/
+/*diseño contenido 8 mapa */
+.mapG{
+   margin-left: 19px;
+   border-radius: 5px;
+   margin-top: 40px;
+   width: 321px;
+   height: 265px;
+}
+.text-cont8{
+    color: #6C6966;
+    margin-top: 15px;
+    margin-left: 19px;
+}
+/*Diseño de la nav secundaria*/
+.nav-secundaria{
+    background-color: #FFAE9E;
+    font-size: 15px;
+    
+}
+.nav-link{
+    color: #6C6966 !important; 
+    font: bold;
+    text-align: center;
+}
+
+/*Diseño de contenido 6 Inicio */
+.cont-6{
+    margin-top: 100px;
+    text-align: center;
+    color: #6C6966;
+}
+/*Diseño de contenido 7 pedidos */
+.cont-7{
+    margin-top: 180px;
+    text-align: center;
+    color: #6C6966;
+}
+/*Diseño de contenido 9 Historial */
+.cont-9{
+    text-align: center;
+}
+.cont-9-div1{
+    width: 320px;
+    height: 80px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 19px;
+}
+.cont-9-div2{
+    width: 320px;
+    height: 365px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 19px;
+}
+.tex-cont-9{
+    margin-top: 10px;
+    margin-left: 19px;
+    color: #6C6966;
+}
+/*Diseño de contenido 10 Caja*/
+}
+
 
   
   

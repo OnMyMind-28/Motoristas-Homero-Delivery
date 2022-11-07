@@ -15,6 +15,7 @@
 
 <body class="body-color" >
     <!-- As a link -->
+    <!--Navbar principal-->
     <section id="contenido-1">
 <nav class="navbar nav-color">
     <div class="container-fluid">
@@ -27,7 +28,7 @@
               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-group icon"></i>Invitar a un amigo</a></li>
               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-question icon"></i>Soporte</a></li>
               <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear icon"></i>Configuración</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket icon"></i>Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-arrow-right-from-bracket icon"></i>Cerrar sesión</a></li>
               <li><a class="dropdown-item" href="#">Menu item</a></li>
               <li><a class="dropdown-item" href="#">Menu item</a></li>
               <li><a class="dropdown-item" href="#">Menu item</a></li>
@@ -44,6 +45,7 @@
   <section id="contenido-3">
     <button onclick="back()">Back</button>
   </section>-->
+  <!--Contenido principal-->
 <section id="contenido-2">
   <div class="div-public1">
     <img class="img-log" src="Frontend/img/logo/1.logo.png" alt="">
@@ -91,12 +93,57 @@
 </section>
 
 <!--  -->
-<!--Contenido prueba 5  -->
-<section id="contenido-5">
-  <h2>Prueba contenido 5</h2>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, eveniet deserunt delectus consectetur quam harum assumenda? Dolorum molestias odit labore.</p>
-  <button>Hola</button>
+<!--Contenido de cuenta de usuario-->
+<section id="contenido-5" class="">
+  <ul class="nav nav-tabs nav-secundaria" >
+    <li class="nav-item" style="width: 72px;">
+      <a class="nav-link active" aria-current="page" onclick="seleccionarOpcion(6)">Inicio</a>
+    </li>
+    <li class="nav-item" style="width: 72px;">
+      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(7)">Pedidos</a>
+    </li>
+    <li class="nav-item" style="width: 72px;">
+      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(8)">Mapa</a>
+    </li>
+    <li class="nav-item" style="width: 72px;">
+      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(9)">Historial</a>
+    </li>
+    <li class="nav-item" style="width: 72px;" >
+      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(10)">Caja</a>
+    </li>
+  </ul>
+</section>
 
+<!--Pestaña inicio-->
+<section id="contenido-6" class="cont-6">
+  <h4>¿Quieres comenzar a repartir ahora?</h4>
+  <p>Haz click en pedidos para ver las entregas disponibles.</p>
+  <img width="200px" height="180px" src="Frontend/img/publicidad/4.public.png" alt="">
+</section>
+
+<!--Pestaña Pedidos-->
+<section id="contenido-7" class="cont-7">
+ <img width="120px" height="100px" src="Frontend/img/publicidad/5.public.png" alt="">
+ <h6 style="margin-top: 70px;">No tienes entregas disponibles</h6>
+</section>
+
+<!--Pestaña Mapa-->
+<section id="contenido-8" class="cont-8">
+  <iframe class="mapG" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61916.45839773457!2d-87.2153088!3d14.09024!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2shn!4v1667777978068!5m2!1ses!2shn" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <h6 class="text-cont8">Mi ubicación</h6>
+</section>
+
+<!--Pestaña Historial-->
+<section id="contenido-9">
+  <h6 class="tex-cont-9">Última entrega</h6>
+  <div class="cont-9-div1"></div>
+  <h6 class="tex-cont-9">Resumen</h6>
+  <div class="cont-9-div2"></div>
+</section>
+ 
+<!--Pestaña Caja-->
+<section id="contenido-10">
+ Caja
 </section>
 
  

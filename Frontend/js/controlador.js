@@ -153,7 +153,7 @@ function modalInicio () {
     <h5>Inicio de sesión</h5>
     <input id="mail" class="mt-2" type="text">
     <input id="pass" class="mt-2" type="text">
-    <button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
+    <button class="btn-modal" onclick="seleccionarOpcion(5), seleccionarOpcion(6)">Iniciar sesión</button>
     </form>
   </div>
          `
@@ -180,12 +180,12 @@ const opcionA = 1 ; //opcion para ver el contenido despues del inico de sesión
 const opcionPrincipal = 2; // opcion del contenido principal
 const opcionInicio = 3; // opción para inicio de sesión
 const opcionRegistro = 4; // opción para registrarse 
-const opcionB = 5; //opcion para visualizar pedidos
-const opcionC = 6; //opcion para visualizar ---
-const opcionD = 7; //opcion para visualizar ---
-const opcionE = 8; //opcion para visualizar ---
-const opcionF= 9; //opcion para visualizar ---
-
+const opcionNavbar = 5; //opcion para visualizar navbar
+const opcionNavInicio = 6; //opcion para visualizar Inicio de navabar
+const opcionPedidos = 7; //opcion para visualizar Pedidos
+const opcionMapa = 8; //opcion para visualizar Mapa
+const opcionHistorial= 9; //opcion para visualizar Historial
+const opcionCaja= 10; //opcion para visualizar Caja
 
 function seleccionarOpcion(opcion){
     switch (opcion) {
@@ -194,6 +194,12 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-2').style.display = "none";
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "none";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
             break;
         
         case opcionPrincipal:
@@ -202,6 +208,11 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "none";
             document.getElementById('contenido-5').style.display = "none";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
               break; 
            
         case opcionInicio:
@@ -211,6 +222,11 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-3').style.display = "block";
             document.getElementById('contenido-4').style.display = "none";
             document.getElementById('contenido-5').style.display = "none";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
           break;
         case opcionRegistro:
          
@@ -219,17 +235,87 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "block";
             document.getElementById('contenido-5').style.display = "none";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
            
           break;
         
-        case opcionB:
+
+        case opcionNavbar:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
             document.getElementById('contenido-3').style.display = "none";
             document.getElementById('contenido-4').style.display = "none";
             document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
             break;
-           
+        case opcionNavInicio: 
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "block";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
+        break;
+        case opcionPedidos:
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "block";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
+            break;
+        case opcionMapa :
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "block";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "none";
+            break;
+        case opcionHistorial:
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "block";
+            document.getElementById('contenido-10').style.display = "none";
+            break;
+        case opcionCaja:
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-2').style.display = "none";
+            document.getElementById('contenido-3').style.display = "none";
+            document.getElementById('contenido-4').style.display = "none";
+            document.getElementById('contenido-5').style.display = "block";
+            document.getElementById('contenido-6').style.display = "none";
+            document.getElementById('contenido-7').style.display = "none";
+            document.getElementById('contenido-8').style.display = "none";
+            document.getElementById('contenido-9').style.display = "none";
+            document.getElementById('contenido-10').style.display = "block";
+            break;
         
     }
 }
