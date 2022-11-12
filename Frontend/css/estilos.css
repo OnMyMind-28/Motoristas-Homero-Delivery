@@ -118,7 +118,7 @@
    .footer-A{
     display: flex;
     justify-content: space-around;
-    margin-top: 75px;
+    margin-top: 30px;
     font-size: 10px;
     color: rgba(128, 0, 128, 0.685);
    }
@@ -216,8 +216,10 @@
 }
 .nav-link{
     color: #6C6966 !important; 
-    font: bold;
     text-align: center;
+}
+.page{
+    background-color:#f59f00 !important;
 }
 
 /*Diseño de contenido 6 Inicio */
@@ -258,7 +260,68 @@
     color: #6C6966;
 }
 /*Diseño de contenido 10 Caja*/
+/*Pestaña pedidos*/
+.btn-pedidos{
+    font-size: 12px;
+    background-color:  #FEBB22;
+    color: #FFFFFF;
+    border-radius: 100px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 30px;
+    height: 60px;
+    width: 60px;
 }
+/*Contenido de pestaña pedidos*/
+#ActualizarContPedido{
+    display: none;
+}
+.btn-rechazo{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+#cont1-pedidos{
+    display: none;
+}
+.mapPedidos{
+    margin-left: 19px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 321px;
+    height: 265px;
+}
+.btn-aceptarP{
+    background-color:  #57CFC5;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 145px;
+    margin-top: 50px;
+}
+.text-contP{
+    color: #6C6966;
+    margin-top: 15px;
+    margin-left: 19px;
+    font-size: 0.7rem;
+}
+/************************/
+#cont2-pedidos{
+display: none;
+}
+#cont3-pedidos{
+display: none;
+}
+#cont4-pedidos{
+display: none;
+}
+#cont5-pedidos{
+display: none;
+}
+}
+
+
 
 
   

@@ -17,29 +17,51 @@
     <!-- As a link -->
     <!--Navbar principal-->
     <section id="contenido-1">
-<nav class="navbar nav-color">
-    <div class="container-fluid">
-        <div class="">
-            <button type="button" class="fa-solid fa-bars btn-style"  data-bs-toggle="dropdown" aria-expanded="false">
-              
-            </button>
-            <ul class="dropdown-menu menu">
-              <li><a class="dropdown-item " href="#"><i class="fa-solid fa-bell icon"></i>Notificaciones</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-group icon"></i>Invitar a un amigo</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-question icon"></i>Soporte</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear icon"></i>Configuración</a></li>
-              <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-arrow-right-from-bracket icon"></i>Cerrar sesión</a></li>
-              <li><a class="dropdown-item" href="#">Menu item</a></li>
-              <li><a class="dropdown-item" href="#">Menu item</a></li>
-              <li><a class="dropdown-item" href="#">Menu item</a></li>
-              <li><a class="dropdown-item" href="#">Menu item</a></li>
-            </ul>
+      <nav class="navbar nav-color">
+          <div class="container-fluid">
+              <div class="">
+                  <button type="button" class="fa-solid fa-bars btn-style"  data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                  </button>
+                  <ul class="dropdown-menu menu">
+                    <li><a class="dropdown-item " href="#"><i class="fa-solid fa-bell icon"></i>Notificaciones</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-group icon"></i>Invitar a un amigo</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-question icon"></i>Soporte</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear icon"></i>Configuración</a></li>
+                    <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-arrow-right-from-bracket icon"></i>Cerrar sesión</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                  </ul>
+                </div>
+                
+                
           </div>
-          
-          
-    </div>
-  </nav>
-</section>
+        </nav>
+      </section>
+      <!--Contenido de cuenta de usuario-->
+      <section id="contenido-5" class="">
+        <ul class="nav nav-tabs nav-secundaria" >
+          <li class="nav-item" style="width: 72px;">
+            <a class="nav-link active" aria-current="page" onclick="seleccionarOpcion(6)">Inicio</a>
+          </li>
+          <li class="nav-item" style="width: 72px;">
+            <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(7)">Pedidos</a>
+          </li>
+          <li class="nav-item" style="width: 72px;">
+            <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(8)">Mapa</a>
+          </li>
+          <li class="nav-item" style="width: 72px;">
+            <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(9)">Historial</a>
+          </li>
+          <li class="nav-item" style="width: 72px;" >
+            <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(10)">Caja</a>
+          </li>
+        </ul>
+      </section>
+<!--SECTION para contenido principal sin las nav-->
+<section id="contenido-all-principal">
   <!--Div principal de publicidad de la app-->
   <!--
   <section id="contenido-3">
@@ -93,26 +115,6 @@
 </section>
 
 <!--  -->
-<!--Contenido de cuenta de usuario-->
-<section id="contenido-5" class="">
-  <ul class="nav nav-tabs nav-secundaria" >
-    <li class="nav-item" style="width: 72px;">
-      <a class="nav-link active" aria-current="page" onclick="seleccionarOpcion(6)">Inicio</a>
-    </li>
-    <li class="nav-item" style="width: 72px;">
-      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(7)">Pedidos</a>
-    </li>
-    <li class="nav-item" style="width: 72px;">
-      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(8)">Mapa</a>
-    </li>
-    <li class="nav-item" style="width: 72px;">
-      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(9)">Historial</a>
-    </li>
-    <li class="nav-item" style="width: 72px;" >
-      <a class="nav-link " aria-current="page" onclick="seleccionarOpcion(10)">Caja</a>
-    </li>
-  </ul>
-</section>
 
 <!--Pestaña inicio-->
 <section id="contenido-6" class="cont-6">
@@ -124,7 +126,11 @@
 <!--Pestaña Pedidos-->
 <section id="contenido-7" class="cont-7">
  <img width="120px" height="100px" src="Frontend/img/publicidad/5.public.png" alt="">
- <h6 style="margin-top: 70px;">No tienes entregas disponibles</h6>
+ <h6 style="margin-top: 20px;">No tienes entregas disponibles</h6>
+ <div class="d-flex justify-content-center">
+  <button class="btn-pedidos" onclick="ActualizarContPedido(1)">Actualizar</button>
+  
+</div>
 </section>
 
 <!--Pestaña Mapa-->
@@ -145,9 +151,28 @@
 <section id="contenido-10">
  Caja
 </section>
-
  
+</section>
 
+<!--Contenido al actualizar la pestaña pedidos-->
+<section id="contenido-all-pedidos">
+  <section id="cont1-pedidos">
+    
+  </section>
+  <section id="cont2-pedidos">
+
+  </section>
+  <section id="cont3-pedidos">
+
+  </section>
+  <section id="cont4-pedidos">
+
+  </section>
+  <section id="cont5-pedidos">
+
+  </section>
+</section>
+ 
 <!--Footer--> 
 <footer class="footer-A">
   <i class="fa-brands fa-instagram" >Instagram</i>

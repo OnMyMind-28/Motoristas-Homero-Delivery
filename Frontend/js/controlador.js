@@ -175,6 +175,7 @@ function modalRegistro () {
 
 }
 
+/******************************************************************************************************************** */
 /***Función para bloqueo de contenido al cambio de pagina */
 const opcionA = 1 ; //opcion para ver el contenido despues del inico de sesión
 const opcionPrincipal = 2; // opcion del contenido principal
@@ -214,6 +215,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
               break; 
+        //Opción de inicio de sesión 
            
         case opcionInicio:
           
@@ -228,6 +230,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
           break;
+          //Opción para registrarse 
         case opcionRegistro:
          
             document.getElementById('contenido-1').style.display = "none";
@@ -243,7 +246,7 @@ function seleccionarOpcion(opcion){
            
           break;
         
-
+        //Opción para mostrar la navbar principal
         case opcionNavbar:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -256,6 +259,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
             break;
+        //Opción para mostrar la navbar secundaria inicio
         case opcionNavInicio: 
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -268,6 +272,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
         break;
+        //opción de navbar secundaria pedidos
         case opcionPedidos:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -280,6 +285,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
             break;
+        //opción de navbar secundaria mapa
         case opcionMapa :
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -292,6 +298,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "none";
             break;
+        //opción de navbar secundaria historial
         case opcionHistorial:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -304,6 +311,7 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "block";
             document.getElementById('contenido-10').style.display = "none";
             break;
+        //opción de navbar secundaria caja
         case opcionCaja:
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-2').style.display = "none";
@@ -316,18 +324,96 @@ function seleccionarOpcion(opcion){
             document.getElementById('contenido-9').style.display = "none";
             document.getElementById('contenido-10').style.display = "block";
             break;
+            default:
+            break;
         
     }
 }
 seleccionarOpcion();
+/******************************************************************************************************************** */
+//Funciones para genera el contenido de la app
+//Genera el contenido de la pestaña pedidos
+const actualizar = 1;
+const rechazarPedido = 2;
+const aceptarPedido = 3;
+const retirarPedido = 4;
+const entregarPedido = 5;
+function ActualizarContPedido(opcionPedidos){
+    switch (opcionPedidos) {
+        case actualizar:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "block";
+            document.getElementById('cont2-pedidos').style.display = "none";
+            document.getElementById('cont3-pedidos').style.display = "none";
+            document.getElementById('cont4-pedidos').style.display = "none";
+            document.getElementById('cont5-pedidos').style.display = "none";
+            document.getElementById('contenido-1').style.display = "block";
+            document.getElementById('contenido-5').style.display = "block";
+            
+            break;
+        case rechazarPedido:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "none";
+            document.getElementById('cont2-pedidos').style.display = "block";
+            document.getElementById('cont3-pedidos').style.display = "none";
+            document.getElementById('cont4-pedidos').style.display = "none";
+            document.getElementById('cont5-pedidos').style.display = "none";
+            break;
+        case aceptarPedido:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "none";
+            document.getElementById('cont2-pedidos').style.display = "none";
+            document.getElementById('cont3-pedidos').style.display = "block";
+            document.getElementById('cont4-pedidos').style.display = "none";
+            document.getElementById('cont5-pedidos').style.display = "none";
+            break;
+        case retirarPedido:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "none";
+            document.getElementById('cont2-pedidos').style.display = "none";
+            document.getElementById('cont3-pedidos').style.display = "none";
+            document.getElementById('cont4-pedidos').style.display = "block";
+            document.getElementById('cont5-pedidos').style.display = "none";
+            break;
+        case entregarPedido:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "none";
+            document.getElementById('cont2-pedidos').style.display = "none";
+            document.getElementById('cont3-pedidos').style.display = "none";
+            document.getElementById('cont4-pedidos').style.display = "none";
+            document.getElementById('cont5-pedidos').style.display = "block";
+            break;
+    
+        default:
+            break;
+    }
+
+}
+/***************************************************************************************************************** */
+function generaContPedidos(){
+    let pedido = motorista;
+    document.getElementById ('cont1-pedidos').innerHTML += `
+    <div class="btn-rechazo">
+    <h6>Nuevo pedido</h6>
+    <a type="button" style="color:purple; borde:0; background-color: #FFC2B2;" onclick="">Rechazar</a>
+    </div>
+    <iframe class="mapPedidos" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61916.45839773457!2d-87.2153088!3d14.09024!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2shn!4v1667777978068!5m2!1ses!2shn" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="text-contP">
+    <h6 >Punto de retiro</h6>
+    <p>Restaurante Tanna's Pizzas</p>
+    <h6 >Punto de entrega</h6>
+    </div>
+    <div>
+     <button class=" btn-aceptarP">Aceptar</button>
+    </div>
+    
+    `
+}generaContPedidos()
 
 //Función para evitar el recargo por defecto del navegador al enviar formulario
 function noRecargo(event){
     event.preventDefault();
 }
-
-
- 
 
 //Función para ir hacia la pagina anterior
 function back(){
