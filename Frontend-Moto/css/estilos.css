@@ -9,10 +9,7 @@
     .nav-color{
         background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
     }
-    button:hover{
-        background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
-        
-     }
+
     /*Color icono hamburguesa*/
     .fa-bars{
         color: #FFFFFF;
@@ -112,11 +109,10 @@
     color: #FFFFFF;
     border-radius: 15px;
     border: 0;
-    cursor: pointer;
+    
    }
    .btn-inico:hover{
-    background-color:  #f59f00;
-    text-decoration: underline;
+        background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% );
    }
    /*************************************************************************************************/
    .footer-A{
@@ -135,6 +131,9 @@
   
   .btn-ini{
      margin-left: 6.5rem;
+  }
+  .btn-ini:hover{
+     background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% ) !important;
   }
   .f-modal{
       margin-right: 2.5rem;
@@ -214,10 +213,11 @@
 }
 /*Diseño de la nav secundaria*/
 .nav-secundaria{
-    background-color: #FFAE9E;
+    background-image: linear-gradient( 102.4deg,  rgba(253,189,85,1) 7.8%, rgba(249,131,255,1) 100.3% ) !important;
     font-size: 15px;
     
 }
+
 .nav-link{
     color: #6C6966 !important; 
     text-align: center;
@@ -267,7 +267,8 @@
 /*Pestaña pedidos*/
 .btn-pedidos{
     font-size: 12px;
-    background-color:  #FEBB22;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    
     color: #FFFFFF;
     border-radius: 100px;
     border: 0;
@@ -276,6 +277,10 @@
     height: 60px;
     width: 60px;
 }
+.pedidos-2:hover{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+}
+
 /*Contenido de pestaña pedidos*/
 #ActualizarContPedido{
     display: none;
