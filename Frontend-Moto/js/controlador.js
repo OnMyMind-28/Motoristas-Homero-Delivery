@@ -1,137 +1,20 @@
 ///-----------------------------------------------Motorista-------------------------------
 var motorista = [{
-    idMotorista:1,
-    nombre: "Antonio",
-    apellido: "Madrid",
-    mail: "antoniomadrid@gmail.com",
-    password: "1Anto",
-    /******Pedidos******************************************************************************* */
-    pedidos: [{
-        numeroPedido: 1,
-        puntoRetiro: "Lorem djcnj",
-        puntoEntrega: "Lorem jvskjav",
-        detalleRetiro: "Bulevar",
-        detalleEntrega: "Avenida",
-        detalleOrde: "Combo Familiar Burger King"
-    }
-
-    ],
-    /******Mapa******************************************************************************* */
-    mapa:[{
-        miUbicacion: "Cabañas"
-    }],
-    /******Historial************************************************************************************** */
-    historialEntregas: [{
-        numeroTransaccion: 1,
-        icono: "fa-solid fa-user-group ",
-        horaDeEntrega: 1000
+    nombreMotorista: "Hugo",
+    apellidoMotorista: "Almendares",
+    mail: "hugoalmendares97@gmail.com",
+    password: "hugo",
+    estado: "disponible",
+    ordenesPendientes: {
+      idOrdenP: "1",
+      detalleOrden: "Lorem ipsum"
     },
-        {
-            numeroTrasaccion: 2,
-            horaDeEntrega: 0800
-            
-        }
-    ],
-    /******Caja************************************************************************************** */
-    caja:[{
-        pago: 1,
-        monto: 50,
-        fecha: "15/10/2022",
-        montoPropina: 25,
-        totalPago: 985
-    }]
-},
- 
-   {
-    idMotorista:2,
-        nombre: "Johan",
-        apellido: "Salvador",
-        mail: "johansalvador@yahoo.com",
-        password: "2johan",
-    /******Pedidos******************************************************************************* */
-        pedidos: [{
-            numeroPedido: 1,
-            puntoRetiro: "Lorem djcnj",
-            puntoEntrega: "Lorem jvskjav",
-            detalleRetiro: "Bulevar",
-            detalleEntrega: "Avenida",
-            detalleOrde: "Combo Familiar Burger King"
-        }
-
-        ],
-        /******Mapa******************************************************************************* */
-        mapa:[{
-            miUbicacion: "Cabañas",
-        }],
-        /******Historial************************************************************************************** */
-        historialEntregas: [{
-            numeroTransaccion: 3 ,
-            icono: "fa-solid fa-user-group ",
-            horaDeEntrega: 1100 
-        },
-            {
-                numeroTransaccion: 4,
-                icono: "fa-solid fa-user-group ",
-                horaDeEntrega: 1300
-                
-            },
-
-        ],
-        /******Caja************************************************************************************** */
-        caja:[{
-            pago: 1,
-            monto: 50,
-            fecha: "15/10/2022",
-            montoPropina: 25,
-            totalPago: 985
-
-        }]
+    ordenesFinalizadas: {
+      idOrdenF: "2",
+      detalleOrden: "Lorem ipsum"
     },
-    {
-        idMotorista:3,
-        nombre: "Victoria",
-        apellido: "Rodríguez",
-        mail: "victoriarodriguez@gmail.com",
-        password: "3Victori",
-  /******Pedidos******************************************************************************* */
-        pedidos: [{
-            numeroPedido: 1,
-            puntoRetiro: "Lorem djcnj",
-            puntoEntrega: "Lorem jvskjav",
-            detalleRetiro: "Bulevar",
-            detalleEntrega: "Avenida",
-            detalleOrde: "Combo Familiar Burger King"
-        }
-
-        ],
-        /******Mapa******************************************************************************* */
-        mapa:[{
-            miUbicacion: "Cabañas",
-        }],
-        /******Historial************************************************************************************** */
-        historialEntregas: [{
-            numeroTransaccion: 5,
-            icono: "fa-solid fa-user-group ",
-            horaDeEntrega: 1600 
-        },
-            {
-                numeroTransaccion: 6,
-                icono: "fa-solid fa-user-group ",
-                horaDeEntrega: 1500 
-            }
-        ],
-        /******Caja************************************************************************************** */
-        caja:[{
-            pago: 1,
-            monto: 50,
-            fecha: "15/10/2022",
-            montoPropina: 25,
-            totalPago: 985
-
-        }]
-      
-    }
-];
+    matricula: "A10M15"
+  }];
 
 //Local Storage Usuarios
 var localStorageMotorista = window.localStorage;
