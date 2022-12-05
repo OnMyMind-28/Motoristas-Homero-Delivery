@@ -13,7 +13,23 @@ var motorista = [{
       idOrdenF: "2",
       detalleOrden: "Lorem ipsum"
     },
-    matricula: "A10M15"
+    matricula: "ZRN1234"
+  },
+  {
+    nombreMotorista: "Rodrigo",
+    apellidoMotorista: "Suazo",
+    mail: "rodri25@gmail.com",
+    password: "rodrigo",
+    estado: "disponible",
+    ordenesPendientes: {
+      idOrdenP: "1",
+      detalleOrden: "Lorem ipsum"
+    },
+    ordenesFinalizadas: {
+      idOrdenF: "2",
+      detalleOrden: "Lorem ipsum"
+    },
+    matricula: "HAA0001"
   }];
 
 //Local Storage Usuarios
