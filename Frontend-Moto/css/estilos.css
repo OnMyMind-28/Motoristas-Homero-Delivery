@@ -1,9 +1,12 @@
 .body-color{
     background-color: #FFC2B2 !important;
-
+  
 }
 
-@media (max-width: 360px){
+
+
+/***********NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN********************************************************************************************************/
+@media screen and (max-width: 1800px ) and (min-width: 360px )  {
    
     /*Diseño navbar*/
     .nav-color{
@@ -109,6 +112,8 @@
     color: #FFFFFF;
     border-radius: 15px;
     border: 0;
+    display: flex;
+    flex-direction: column;
     
    }
    .btn-inico:hover{
@@ -116,11 +121,17 @@
    }
    /*************************************************************************************************/
    .footer-A{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
     font-size: 10px;
     color: rgba(128, 0, 128, 0.685);
+
+   }
+   footer{
+    margin-top: 30%;
+    align-self: flex-end;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
    }
   
    /************************************************************************************************************************/
@@ -315,7 +326,7 @@
     margin-left: 19px;
     font-size: 0.7rem;
 }
-/************************/
+/*********Contenidos de pedidos****************************************************************************************/
 #cont2-pedidos{
 display: none;
 }
@@ -328,10 +339,25 @@ display: none;
 #cont5-pedidos{
 display: none;
 }
+/**********Contenidos de los submenu lateral izquierdo***********************************************************************************************************/
+#cont1-notificaciones{
+    display: none;
 }
-
-
-
+#cont2-amigo{
+    display: none;
+}
+#cont3-soporte{
+    display: none;
+}
+#cont4-configuracion{
+    display: none;
+}
+/****************DISEÑOS DENTRO DE SUBMENUS*/
+.ayuda-onLine{
+    display: flex;
+    justify-content: center !important;
+}
+}
 
   
   

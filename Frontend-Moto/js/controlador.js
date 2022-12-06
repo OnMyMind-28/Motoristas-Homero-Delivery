@@ -289,6 +289,60 @@ function ActualizarContPedido(opcionPedidos){
 
 }
 /***************************************************************************************************************** */
+//Función para el contenido dentro de los submenu del menú lateral izquierdo
+const notificaciones = 1;
+const inviteAmigo = 2;
+const soporte = 3;
+const configuracion = 4;
+const extra = 5;
+/*
+cont1-notificaciones
+cont2-amigo
+cont3-soporte
+cont4-configuracion
+*/
+function OpcionesSubmenu (opcionSubmenu){
+    switch (opcionSubmenu) {
+        case notificaciones:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "block";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            
+            break;
+        case inviteAmigo:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "block";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            break;
+        case soporte:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "block";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            break;
+        case configuracion:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "block";
+        break;
+    
+        default:
+            break;
+    }
+
+}
+/***************************************************************************************************************** */
 function generaContPedidos(){
     let pedido = motorista;
     document.getElementById ('cont1-pedidos').innerHTML += `
@@ -306,7 +360,7 @@ function generaContPedidos(){
      <button class=" btn-aceptarP">Aceptar</button>
     </div>
     
-    `
+    `//En el button aceptar agreagremos una modal la cual nos pedira la confirmación de retiro del pedido
 }generaContPedidos()
 
 //Función para evitar el recargo por defecto del navegador al enviar formulario
