@@ -108,7 +108,7 @@ data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar Solicitud</button>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Tu solicitud de resgistro ha sido enviada con exito, recibiras un correo electrónico dentro de 8 dias.
+        Tu solicitud de resgistro sera enviada en cuanto pulses aceptar, recibiras un correo electrónico dentro de 8 dias.
         Si, no recibes ningun correo puedes contactarnos mediante nuestro Tel: 2022-1584-345
 
       </div>
