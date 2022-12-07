@@ -1,137 +1,36 @@
 ///-----------------------------------------------Motorista-------------------------------
 var motorista = [{
-    idMotorista:1,
-    nombre: "Antonio",
-    apellido: "Madrid",
-    mail: "antoniomadrid@gmail.com",
-    password: "1Anto",
-    /******Pedidos******************************************************************************* */
-    pedidos: [{
-        numeroPedido: 1,
-        puntoRetiro: "Lorem djcnj",
-        puntoEntrega: "Lorem jvskjav",
-        detalleRetiro: "Bulevar",
-        detalleEntrega: "Avenida",
-        detalleOrde: "Combo Familiar Burger King"
-    }
-
-    ],
-    /******Mapa******************************************************************************* */
-    mapa:[{
-        miUbicacion: "Cabañas"
-    }],
-    /******Historial************************************************************************************** */
-    historialEntregas: [{
-        numeroTransaccion: 1,
-        icono: "fa-solid fa-user-group ",
-        horaDeEntrega: 1000
+    nombreMotorista: "Hugo",
+    apellidoMotorista: "Almendares",
+    mail: "hugoalmendares97@gmail.com",
+    password: "hugo",
+    estado: "disponible",
+    ordenesPendientes: {
+      idOrdenP: "1",
+      detalleOrden: "Lorem ipsum"
     },
-        {
-            numeroTrasaccion: 2,
-            horaDeEntrega: 0800
-            
-        }
-    ],
-    /******Caja************************************************************************************** */
-    caja:[{
-        pago: 1,
-        monto: 50,
-        fecha: "15/10/2022",
-        montoPropina: 25,
-        totalPago: 985
-    }]
-},
- 
-   {
-    idMotorista:2,
-        nombre: "Johan",
-        apellido: "Salvador",
-        mail: "johansalvador@yahoo.com",
-        password: "2johan",
-    /******Pedidos******************************************************************************* */
-        pedidos: [{
-            numeroPedido: 1,
-            puntoRetiro: "Lorem djcnj",
-            puntoEntrega: "Lorem jvskjav",
-            detalleRetiro: "Bulevar",
-            detalleEntrega: "Avenida",
-            detalleOrde: "Combo Familiar Burger King"
-        }
-
-        ],
-        /******Mapa******************************************************************************* */
-        mapa:[{
-            miUbicacion: "Cabañas",
-        }],
-        /******Historial************************************************************************************** */
-        historialEntregas: [{
-            numeroTransaccion: 3 ,
-            icono: "fa-solid fa-user-group ",
-            horaDeEntrega: 1100 
-        },
-            {
-                numeroTransaccion: 4,
-                icono: "fa-solid fa-user-group ",
-                horaDeEntrega: 1300
-                
-            },
-
-        ],
-        /******Caja************************************************************************************** */
-        caja:[{
-            pago: 1,
-            monto: 50,
-            fecha: "15/10/2022",
-            montoPropina: 25,
-            totalPago: 985
-
-        }]
+    ordenesFinalizadas: {
+      idOrdenF: "2",
+      detalleOrden: "Lorem ipsum"
     },
-    {
-        idMotorista:3,
-        nombre: "Victoria",
-        apellido: "Rodríguez",
-        mail: "victoriarodriguez@gmail.com",
-        password: "3Victori",
-  /******Pedidos******************************************************************************* */
-        pedidos: [{
-            numeroPedido: 1,
-            puntoRetiro: "Lorem djcnj",
-            puntoEntrega: "Lorem jvskjav",
-            detalleRetiro: "Bulevar",
-            detalleEntrega: "Avenida",
-            detalleOrde: "Combo Familiar Burger King"
-        }
-
-        ],
-        /******Mapa******************************************************************************* */
-        mapa:[{
-            miUbicacion: "Cabañas",
-        }],
-        /******Historial************************************************************************************** */
-        historialEntregas: [{
-            numeroTransaccion: 5,
-            icono: "fa-solid fa-user-group ",
-            horaDeEntrega: 1600 
-        },
-            {
-                numeroTransaccion: 6,
-                icono: "fa-solid fa-user-group ",
-                horaDeEntrega: 1500 
-            }
-        ],
-        /******Caja************************************************************************************** */
-        caja:[{
-            pago: 1,
-            monto: 50,
-            fecha: "15/10/2022",
-            montoPropina: 25,
-            totalPago: 985
-
-        }]
-      
-    }
-];
+    matricula: "ZRN1234"
+  },
+  {
+    nombreMotorista: "Rodrigo",
+    apellidoMotorista: "Suazo",
+    mail: "rodri25@gmail.com",
+    password: "rodrigo",
+    estado: "disponible",
+    ordenesPendientes: {
+      idOrdenP: "1",
+      detalleOrden: "Lorem ipsum"
+    },
+    ordenesFinalizadas: {
+      idOrdenF: "2",
+      detalleOrden: "Lorem ipsum"
+    },
+    matricula: "HAA0001"
+  }];
 
 //Local Storage Usuarios
 var localStorageMotorista = window.localStorage;
@@ -151,8 +50,14 @@ function modalInicio () {
         <div class="modal-container ">
     <form id="formularioInicio" class="modal-form" onsubmit="noRecargo(event)">
     <h5>Inicio de sesión</h5>
+    <div>
+    <span class="input-group-addon "><i class="fa fa-user me-2  " ></i></span>
     <input id="mail" class="mt-2" type="text">
-    <input id="pass" class="mt-2" type="text">
+    </div>
+    <div>
+    <span class="input-group-addon"><i class="fa fa-lock me-2  "></i></span>
+    <input id="pass" class="mt-2" type="password">
+    </div>
     <button class="btn-modal" onclick="seleccionarOpcion(5), seleccionarOpcion(6)">Iniciar sesión</button>
     </form>
   </div>
@@ -162,11 +67,33 @@ function modalInicio () {
 }
 function modalRegistro () {
     document.getElementById ('modalRegistro').innerHTML += `
-    <div class="modal-container ">
-<form id="formularioRegistro"  class="modal-form" onsubmit="noRecargo(event)">
+    <div class="modalR-container ">
+<form id="formularioRegistro"  class="modalR-form" onsubmit="noRecargo(event)">
 <h5>Registro</h5>
-<input id="mail" class="mt-2" type="text">
-<input id="pass" class="mt-2" type="text">
+<div>
+<p class="textModalRegistro">Nombre</p>
+<input id="nombre" class="mt-2" type="text">
+</div>
+<div>
+Apellido
+<input id="apellido" class="mt-2" type="text">
+</div>
+<div>
+Número de identidad
+<input id="identidad" class="mt-2" type="text">
+</div>
+<div>
+Telefono
+<input id="telefono" class="mt-2" type="text">
+</div>
+<div>
+Vehículo que conduce
+<input id="vehivulo" class="mt-2" type="text">
+</div>
+<div>
+Número de placa
+<input id="placa" class="mt-2" type="text">
+</div>
 <button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
 </form>
 </div>
@@ -390,6 +317,60 @@ function ActualizarContPedido(opcionPedidos){
 
 }
 /***************************************************************************************************************** */
+//Función para el contenido dentro de los submenu del menú lateral izquierdo
+const notificaciones = 1;
+const inviteAmigo = 2;
+const soporte = 3;
+const configuracion = 4;
+const extra = 5;
+/*
+cont1-notificaciones
+cont2-amigo
+cont3-soporte
+cont4-configuracion
+*/
+function OpcionesSubmenu (opcionSubmenu){
+    switch (opcionSubmenu) {
+        case notificaciones:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "block";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            
+            break;
+        case inviteAmigo:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "block";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            break;
+        case soporte:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "block";
+            document.getElementById('cont4-configuracion').style.display = "none";
+            break;
+        case configuracion:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('contenido-all-pedidos').style.display = "none";
+            document.getElementById('cont1-notificaciones').style.display = "none";
+            document.getElementById('cont2-amigo').style.display = "none";
+            document.getElementById('cont3-soporte').style.display = "none";
+            document.getElementById('cont4-configuracion').style.display = "block";
+        break;
+    
+        default:
+            break;
+    }
+
+}
+/***************************************************************************************************************** */
 function generaContPedidos(){
     let pedido = motorista;
     document.getElementById ('cont1-pedidos').innerHTML += `
@@ -407,7 +388,7 @@ function generaContPedidos(){
      <button class=" btn-aceptarP">Aceptar</button>
     </div>
     
-    `
+    `//En el button aceptar agreagremos una modal la cual nos pedira la confirmación de retiro del pedido
 }generaContPedidos()
 
 //Función para evitar el recargo por defecto del navegador al enviar formulario
