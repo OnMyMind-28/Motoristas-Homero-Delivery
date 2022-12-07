@@ -5,7 +5,7 @@
 
 
 
-/***********NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN********************************************************************************************************/
+/***********RESPONSIVE 360x640 ********************************************************************************************************/
 @media screen and (max-width: 1800px ) and (min-width: 360px )  {
    
     /*Diseño navbar*/
@@ -139,7 +139,9 @@
 .modal-inicio{
     margin-top: 40%;
   }
-  
+  .modal-Registro{
+    margin-top: 20%;
+  }
   .btn-ini{
      margin-left: 6.5rem;
   }
@@ -157,6 +159,7 @@
    width: 250px;
    height: 150px;
    margin: auto;
+   border-radius: 5px;
    position: relative;
   }
   .modal-form{
@@ -168,13 +171,18 @@
     background-color: #FFFFFF;
     width: 250px;
     height: 450px;
-    
-    position: relative;
+    border-radius: 5px;
+    position:absolute;
+   
    }
    .modalR-form{
    text-align: center;
    color: rgba(150, 148, 148, 0.521);
+  
    
+ }
+ .modal-soli{
+   margin-block-start: 150px;
  }
  .textModalRegistro{
     margin-left: 1rem;
@@ -224,7 +232,7 @@
     display: none;
 }
 /*DISEÑOS DE CONTENIDOS*/
-/*diseño contenido 8 mapa */
+/*diseño contenido 8 mapa */ 
 .mapG{
    margin-left: 19px;
    border-radius: 5px;

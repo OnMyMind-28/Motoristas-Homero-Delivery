@@ -52,18 +52,18 @@ function modalInicio () {
     <h5>Inicio de sesión</h5>
     <div>
     <span class="input-group-addon "><i class="fa fa-user me-2  " ></i></span>
-    <input id="mail" class="mt-2" type="text">
+    <input id="mail" class="mt-2" type="text" placeholder="correo electrónico">
     </div>
     <div>
     <span class="input-group-addon"><i class="fa fa-lock me-2  "></i></span>
-    <input id="pass" class="mt-2" type="password">
+    <input id="pass" class="mt-2" type="password" placeholder="contraseña">
     </div>
-    <button class="btn-modal" onclick="seleccionarOpcion(5), seleccionarOpcion(6)">Iniciar sesión</button>
+    <button class="btn-modal mt-2" onclick="seleccionarOpcion(5), seleccionarOpcion(6)">Iniciar sesión</button>
     </form>
   </div>
          `
     
-   
+         
 }
 function modalRegistro () {
     document.getElementById ('modalRegistro').innerHTML += `
@@ -71,8 +71,8 @@ function modalRegistro () {
 <form id="formularioRegistro"  class="modalR-form" onsubmit="noRecargo(event)">
 <h5>Registro</h5>
 <div>
-<p class="textModalRegistro">Nombre</p>
-<input id="nombre" class="mt-2" type="text">
+<p class="mt-2">Nombre</p>
+<input id="nombre" class="" type="text">
 </div>
 <div>
 Apellido
@@ -94,10 +94,34 @@ Vehículo que conduce
 Número de placa
 <input id="placa" class="mt-2" type="text">
 </div>
-<button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
+<button type="button" class="btn-modal mt-2 " onclick=""
+data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar Solicitud</button>
 </form>
 </div>
-     `
+
+<!-- Modal -->
+<div class="modal fade modal-soli" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Homero Delivery</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tu solicitud de resgistro ha sido enviada con exito, recibiras un correo electrónico dentro de 8 dias.
+        Si, no recibes ningun correo puedes contactarnos mediante nuestro Tel: 2022-1584-345
+
+      </div>
+      <div class="modal-footer">
+      <a href="index.html">
+      <button type="button" class="btn btn-secondary" >Aceptar</button>
+      </a>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+`
 
 
 }
