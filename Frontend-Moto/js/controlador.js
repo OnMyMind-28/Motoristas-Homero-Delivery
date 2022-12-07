@@ -50,8 +50,14 @@ function modalInicio () {
         <div class="modal-container ">
     <form id="formularioInicio" class="modal-form" onsubmit="noRecargo(event)">
     <h5>Inicio de sesión</h5>
+    <div>
+    <span class="input-group-addon "><i class="fa fa-user me-2  " ></i></span>
     <input id="mail" class="mt-2" type="text">
-    <input id="pass" class="mt-2" type="text">
+    </div>
+    <div>
+    <span class="input-group-addon"><i class="fa fa-lock me-2  "></i></span>
+    <input id="pass" class="mt-2" type="password">
+    </div>
     <button class="btn-modal" onclick="seleccionarOpcion(5), seleccionarOpcion(6)">Iniciar sesión</button>
     </form>
   </div>
@@ -61,11 +67,33 @@ function modalInicio () {
 }
 function modalRegistro () {
     document.getElementById ('modalRegistro').innerHTML += `
-    <div class="modal-container ">
-<form id="formularioRegistro"  class="modal-form" onsubmit="noRecargo(event)">
+    <div class="modalR-container ">
+<form id="formularioRegistro"  class="modalR-form" onsubmit="noRecargo(event)">
 <h5>Registro</h5>
-<input id="mail" class="mt-2" type="text">
-<input id="pass" class="mt-2" type="text">
+<div>
+<p class="textModalRegistro">Nombre</p>
+<input id="nombre" class="mt-2" type="text">
+</div>
+<div>
+Apellido
+<input id="apellido" class="mt-2" type="text">
+</div>
+<div>
+Número de identidad
+<input id="identidad" class="mt-2" type="text">
+</div>
+<div>
+Telefono
+<input id="telefono" class="mt-2" type="text">
+</div>
+<div>
+Vehículo que conduce
+<input id="vehivulo" class="mt-2" type="text">
+</div>
+<div>
+Número de placa
+<input id="placa" class="mt-2" type="text">
+</div>
 <button class="btn-modal" onclick="seleccionarOpcion(5)">Iniciar sesión</button>
 </form>
 </div>

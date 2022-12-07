@@ -164,6 +164,21 @@
   color: rgba(150, 148, 148, 0.521);
   
 }
+.modalR-container {
+    background-color: #FFFFFF;
+    width: 250px;
+    height: 450px;
+    
+    position: relative;
+   }
+   .modalR-form{
+   text-align: center;
+   color: rgba(150, 148, 148, 0.521);
+   
+ }
+ .textModalRegistro{
+    margin-left: 1rem;
+ }
 .btn-modal{
   font-size: 12px;
   background-color:  #FEBB22;
