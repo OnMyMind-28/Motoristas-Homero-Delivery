@@ -350,6 +350,75 @@
     margin-left: 19px;
     font-size: 0.7rem;
 }
+.text-contR{
+    color: #6C6966;
+    margin-top: 1.5rem;
+    margin-left: 1.7rem;
+    font-size: 0.7rem;
+}
+.btnCenter{
+   margin-left: 5.5rem;
+   margin-top: 2rem;
+   background-color:  #57CFC5;
+   color: #FFFFFF;
+   border-radius: 15px;
+   border: 0;
+   cursor: pointer;
+}
+.btncentR{
+    margin-left: 7.5rem;
+    margin-top: 2rem;
+    background-color:  #57CFC5;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+}
+.btnEntrega{
+    margin-left: 6.7rem;
+    margin-top: 2rem;
+    background-color:  #57CFC5;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+}
+.btnLlegueEntrega{
+    margin-left: 4.8rem;
+    margin-top: 2rem;
+    background-color:  #57CFC5;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+}
+.btnconfir{
+    background-color:  #57CFC5;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+.container-retiro{
+    background-color: #FFFFFF;
+    width: 300px;
+    height: 320px;
+    border-radius: 5px;
+    position:absolute;
+   margin-left: 1.8rem;
+   margin-top: 1rem;
+}
+.modal-confir{
+    margin-top: 350px;
+}
+.modal-Entrega-End{
+    margin-top: 350px;
+}
+.p-Historial{
+    margin-left: 1rem;
+}
 /*********Contenidos de pedidos****************************************************************************************/
 #cont2-pedidos{
 display: none;
@@ -363,6 +432,10 @@ display: none;
 #cont5-pedidos{
 display: none;
 }
+#cont6-pedidos{
+display: none;
+}
+
 /**********Contenidos de los submenu lateral izquierdo***********************************************************************************************************/
 #cont1-notificaciones{
     display: none;

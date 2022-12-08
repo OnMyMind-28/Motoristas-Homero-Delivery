@@ -289,6 +289,8 @@ const rechazarPedido = 2;
 const aceptarPedido = 3;
 const retirarPedido = 4;
 const entregarPedido = 5;
+const detallePedidoEntrega = 6;
+
 function ActualizarContPedido(opcionPedidos){
     switch (opcionPedidos) {
         case actualizar:
@@ -298,8 +300,10 @@ function ActualizarContPedido(opcionPedidos){
             document.getElementById('cont3-pedidos').style.display = "none";
             document.getElementById('cont4-pedidos').style.display = "none";
             document.getElementById('cont5-pedidos').style.display = "none";
+            document.getElementById('cont6-pedidos').style.display = "none";
             document.getElementById('contenido-1').style.display = "block";
             document.getElementById('contenido-5').style.display = "block";
+            
             
             break;
         case rechazarPedido:
@@ -309,7 +313,7 @@ function ActualizarContPedido(opcionPedidos){
             document.getElementById('cont3-pedidos').style.display = "none";
             document.getElementById('cont4-pedidos').style.display = "none";
             document.getElementById('cont5-pedidos').style.display = "none";
-            break;
+            document.getElementById('cont6-pedidos').style.display = "none";            break;
         case aceptarPedido:
             document.getElementById('contenido-all-principal').style.display = "none";
             document.getElementById('cont1-pedidos').style.display = "none";
@@ -317,7 +321,8 @@ function ActualizarContPedido(opcionPedidos){
             document.getElementById('cont3-pedidos').style.display = "block";
             document.getElementById('cont4-pedidos').style.display = "none";
             document.getElementById('cont5-pedidos').style.display = "none";
-            break;
+            document.getElementById('cont6-pedidos').style.display = "none";           
+             break;
         case retirarPedido:
             document.getElementById('contenido-all-principal').style.display = "none";
             document.getElementById('cont1-pedidos').style.display = "none";
@@ -325,7 +330,8 @@ function ActualizarContPedido(opcionPedidos){
             document.getElementById('cont3-pedidos').style.display = "none";
             document.getElementById('cont4-pedidos').style.display = "block";
             document.getElementById('cont5-pedidos').style.display = "none";
-            break;
+            document.getElementById('cont6-pedidos').style.display = "none";           
+             break;
         case entregarPedido:
             document.getElementById('contenido-all-principal').style.display = "none";
             document.getElementById('cont1-pedidos').style.display = "none";
@@ -333,8 +339,18 @@ function ActualizarContPedido(opcionPedidos){
             document.getElementById('cont3-pedidos').style.display = "none";
             document.getElementById('cont4-pedidos').style.display = "none";
             document.getElementById('cont5-pedidos').style.display = "block";
+            document.getElementById('cont6-pedidos').style.display = "none";
             break;
-    
+        case detallePedidoEntrega:
+            document.getElementById('contenido-all-principal').style.display = "none";
+            document.getElementById('cont1-pedidos').style.display = "none";
+            document.getElementById('cont2-pedidos').style.display = "none";
+            document.getElementById('cont3-pedidos').style.display = "none";
+            document.getElementById('cont4-pedidos').style.display = "none";
+            document.getElementById('cont5-pedidos').style.display = "none";
+            document.getElementById('cont6-pedidos').style.display = "block";
+          
+            break;
         default:
             break;
     }
@@ -400,7 +416,7 @@ function generaContPedidos(){
     document.getElementById ('cont1-pedidos').innerHTML += `
     <div class="btn-rechazo">
     <h6>Nuevo pedido</h6>
-    <a type="button" style="color:purple; borde:0; background-color: #FFC2B2;" onclick="">Rechazar</a>
+    <a type="button" style="color:purple; borde:0; background-color: #FFC2B2;" onclick="ActualizarContPedido(2)">Rechazar</a>
     </div>
     <iframe class="mapPedidos" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61916.45839773457!2d-87.2153088!3d14.09024!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2shn!4v1667777978068!5m2!1ses!2shn" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <div class="text-contP">
@@ -409,12 +425,153 @@ function generaContPedidos(){
     <h6 >Punto de entrega</h6>
     </div>
     <div>
-     <button class=" btn-aceptarP">Aceptar</button>
+     <button class=" btn-aceptarP" onclick="ActualizarContPedido(3)")>Aceptar</button>
     </div>
     
     `//En el button aceptar agreagremos una modal la cual nos pedira la confirmación de retiro del pedido
 }generaContPedidos()
 
+function pedidoAceptado(){
+    document.getElementById('cont3-pedidos').innerHTML += `
+    <div class="btn-rechazo">
+    <h6 style=" color: rgba(150, 148, 148, 0.521);">
+    <center>Lllegada estimada a las 17:45 hrs</h6></center>
+    </div>
+    <iframe class="mapPedidos" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61916.45839773457!2d-87.2153088!3d14.09024!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2shn!4v1667777978068!5m2!1ses!2shn" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="text-contP">
+    <h6 >Detalles de punto de retiro</h6>
+    <p>Restaurante Tanna's Pizzas</p>
+    <p>Córdoba-Avellaneda</p>
+    </div>
+    <div class="">
+
+    <button class="  btnCenter" onclick="ActualizarContPedido(4)">Llegué al punto de retiro</button>
+ 
+    </div>
+
+    `
+}pedidoAceptado()
+ function detallePedido(){
+    
+    document.getElementById('cont4-pedidos').innerHTML += `
+    <div  class="text-contR">
+    <h6 >Restaurante Tanna's Pizzas</h6>
+    <h6 >Córdoba-Avellaneda</h6>
+    <p>Retirar a las 17:20 hrs</p>
+    </div>
+
+    <div class="container-retiro ">
+    <div class="text-contR">
+    <h6 style=" color: rgba(150, 148, 148, 0.521);">
+    Detalles de la orden</h6>
+    <p>ID pedido: 1</p>
+    <p>Producto: Pizza familiar</p>
+    <p>Nombre del cliente: Ricardo Rodriguez</p>
+    </div>
+    <button type="button" class=" btncentR"
+     data-bs-toggle="modal" data-bs-target="#exampleModal">Retirar</button>
+    </div>
+    </div>
+    
+    <!-- Modal -->
+<div class="modal fade modal-confir" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Homero Delivery</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <center>¿Confirmas que retiraste el pedido 1?</center>
+       <button type="button" class=" btnconfir" data-bs-dismiss="modal" aria-label="Close"  onclick="ActualizarContPedido(5)">Confirmar</button>
+       <button type="button" class=" btnconfir" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+      <div class="modal-footer">
+      
+        
+      </div>
+    </div>
+  </div>
+</div> 
+
+    `
+ }detallePedido()
+//data-bs-dismiss="modal" aria-label="Close" 
+ function detallePuntoEntrega(){
+    document.getElementById('cont5-pedidos').innerHTML += `
+    <div class="btn-rechazo">
+    <h6 style=" color: rgba(150, 148, 148, 0.521);">
+    <center>Lllegada estimada a las 17:45 hrs</h6></center>
+    </div>
+    <iframe class="mapPedidos" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d61916.45839773457!2d-87.2153088!3d14.09024!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2shn!4v1667777978068!5m2!1ses!2shn" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="text-contP">
+    <h6 >Detalles de punto de entrega</h6>
+    <p>Calle entre Sargento y Moreno</p>
+    <p>Edificio trejo, apartamento No.3</p>
+    <br>
+    <p>Nombre del cliente: Ricardo Rodriguez</p>
+    </div>
+    <div class="">
+
+    <button class="btnLlegueEntrega" onclick="ActualizarContPedido(6)">Llegué al punto de entrega</button>
+ 
+    </div>
+
+    `
+ }detallePuntoEntrega()
+
+ function DetallePedidoEntrega(){
+      
+    document.getElementById('cont6-pedidos').innerHTML += `
+    <div  class="text-contR">
+    <h6 >Restaurante Tanna's Pizzas</h6>
+    <h6 >Córdoba-Avellaneda</h6>
+    <p>Entrega a las 17:45 hrs</p>
+    </div>
+
+    <div class="container-retiro ">
+    <div class="text-contR">
+    <h6 style=" color: rgba(150, 148, 148, 0.521);">
+    Detalles de la orden</h6>
+    <p>ID pedido: 1</p>
+    <p>Producto: Pizza familiar</p>
+    <p>Nombre del cliente: Ricardo Rodriguez</p>
+    </div>
+    <button type="button" class="btnEntrega"  onclick="modalEnd()" 
+    data-bs-toggle="modal" data-bs-target="#staticBackdrop">Entregar</button>
+    </div>
+    </div>
+    
+    <!-- Button trigger modal -->
+    
+
+    `
+ }DetallePedidoEntrega()
+
+ function modalEnd(){
+    document.getElementById('modal-end').innerHTML += `
+    <!-- Modal -->
+  <div class="modal fade modal-Entrega-End" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Homero Delivery</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <center>¿Confirmas que entregaste el pedido 1?</center>
+        <button type="button" class=" btnconfir" 
+          onclick="seleccionarOpcion(3)">Confirmar</button>
+        <button type="button" class=" btnconfir" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+
+    `
+ }modalEnd()
 //Función para evitar el recargo por defecto del navegador al enviar formulario
 function noRecargo(event){
     event.preventDefault();
