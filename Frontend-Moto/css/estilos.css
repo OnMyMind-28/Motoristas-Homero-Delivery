@@ -454,6 +454,23 @@ display: none;
     display: flex;
     justify-content: center !important;
 }
+/*Para quitar el borde por defento de los 
+input al momento de escribir en ellos y 
+asi visualizar los diseños creados*/
+input:focus{
+    outline-width: 0;
+}
+
+/*Clases para imprimir el borde en rojo si se quiere guardar si llenar los input*/
+.input-error{
+    border: 1px solid #ff0000;
+
+}
+
+/*Clase si se guardan los input con la información requerida*/
+.input-sucess{
+    border: 1px solid #00ff00;
+}
 }
 
   

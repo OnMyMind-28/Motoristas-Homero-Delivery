@@ -1,5 +1,5 @@
 ///-----------------------------------------------Motorista-------------------------------
-var motorista = [{
+/*var motorista = [{
     nombreMotorista: "Hugo",
     apellidoMotorista: "Almendares",
     mail: "hugoalmendares97@gmail.com",
@@ -30,7 +30,7 @@ var motorista = [{
       detalleOrden: "Lorem ipsum"
     },
     matricula: "HAA0001"
-  }];
+  }];*/
 
 //Local Storage Usuarios
 var localStorageMotorista = window.localStorage;
@@ -41,9 +41,96 @@ if(localStorageMotorista.getItem('motorista')==null){
 } else {
     motorista = JSON.parse(localStorageMotorista.getItem('motorista'))
 }
+/******************************************************************************************************************* */
+let getMotoristas;
+let getMotorista;
+let postMotorista;
+let putMotorista;
+let deleteMotorista;
+//url la rutas de nuestro RestAPI
+//****OBTENER MOTORISTAS TODOS*****************************************************************
+const obtenerMotoristas = async ()=>{
+  const endpoint = 'http://localhost:3000/usuarios/';
+   const result = await fetch (endpoint, 
+    {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    getMotoristas= await result.json();
+   // console.log('Motorista', resultJSON);
+};
+obtenerMotoristas();
+//****OBTENER MOTORISTA UNO*********************************************************************
+const obtenerMotorista = async (id) =>{//Función para obtener solo un usuario
+  const endpoint = 'http://localhost:3000/usuarios/';
+    const result = await fetch (endpoint + id,//result almacena el resultado, +id es para concatenar
+        {
+        method: 'GET',
+        
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    getMotorista = await result.json();
+    //console.log('Motorista: ', resultJSON);
+}
+
+//****GUARDAR MOTORISTA (crear motorista)**********************************************************
+const guardarMotorista = async (usuario) =>{//Para guardar o crear es POST
+  const endpoint = 'http://localhost:3000/usuarios/';
+    const result = await fetch (endpoint,
+        {
+            method: 'POST',
+        
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario) //Es lo que recibiria el backend para guardarlo en Mongodb
+            //Para que sea valido nuestro JSON hay que parsearlo con *JSON.stringify*
+        });
+        postMotorista = await result.json();
+        //console.log('Motorista guardado: ', resultJSON);
+};
+
+//****ACTUALIZAR MOTORISTA ***********************************************************************
+const actualizarMotorista = async (usuario, id) =>{//Para actualizar es PUT
+  const endpoint = 'http://localhost:3000/usuarios/';
+    const result = await fetch (endpoint + id,
+        {
+            method: 'PUT',
+        
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario) //Es lo que recibiria el backend para guardarlo en Mongodb
+            //Para que sea valido nuestro JSON hay que parsearlo con *JSON.stringify*
+        });
+        putMotorista = await result.json();
+       // console.log('Motorista actualizado: ', resultJSON);
+};
 
 
+//****ELIMINAR MOTORISTA*************************************************************************
+const eliminarMotorista = async (id) =>{//Para eliminar es DELETE
+  const endpoint = 'http://localhost:3000/usuarios/';
+    const result = await fetch (endpoint + id,
+        {
+            method: 'DELETE',
+        
+            headers: {
+                'Content-Type': 'application/json'
+            },
+           
+        });
+        deleteMotorista = await result.json();
+       console.log('Motorista eliminado: ', resultJSON);
+};
+//eliminarMotorista('6382bd062df5e1ec1c531892');
+/************************************************************************************************************************* */
 
+/************************************************************************************************************************ */
 //Ventana modal formulario inicio sesión
 function modalInicio () {
         document.getElementById ('modalInicio').innerHTML += `
@@ -52,7 +139,7 @@ function modalInicio () {
     <h5>Inicio de sesión</h5>
     <div>
     <span class="input-group-addon "><i class="fa fa-user me-2  " ></i></span>
-    <input id="mail" class="mt-2" type="text" placeholder="correo electrónico">
+    <input id="mail" class="mt-2" type="text" placeholder="correo electrónico" onkeyup="ValidarCorreo(this)">
     </div>
     <div>
     <span class="input-group-addon"><i class="fa fa-lock me-2  "></i></span>
@@ -68,7 +155,7 @@ function modalInicio () {
 function modalRegistro () {
     document.getElementById ('modalRegistro').innerHTML += `
     <div class="modalR-container ">
-<form id="formularioRegistro"  class="modalR-form" onsubmit="noRecargo(event)">
+<form id="formularioRegistro"  class="modalR-form" onsubmit="noRecargo(event), return validarCampoVacio(this)">
 <h5>Registro</h5>
 <div>
 <p class="mt-2">Nombre</p>
@@ -581,6 +668,36 @@ function noRecargo(event){
 function back(){
     window.history.back();
 }
+//Funcion para validar campo vacio y de esta manera escribimos menos código
+function validarCampoVacio(id){
+  let campo = document.getElementById(id);
+  if(campo.value == ''){
+      campo.classList.remove('input-sucess');
+      campo.classList.add('input-error');//traer una clase classlist.add
+  } else{
+      campo.classList.add('input-sucess');
+  }
+  if(campo.value == ''){
+      campo.classList.remove('input-sucess');
+      campo.classList.add('input-error');//traer una clase classlist.add
+  }else{
+      campo.classList.add('input-sucess');
+  }
+}
+//Función para validar correo, regex (regular special)
+function ValidarCorreo(campo){
+  console.log(campo.value);
+  //let campo = document.getElementById(id);
+  var regex= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (regex.test(campo.value)) {
+      campo.classList.remove('input-error');
+      campo.classList.add('input-sucess');
+  } else{
+      campo.classList.remove('input-sucess');
+      campo.classList.add('input-error');  
+  }
+}
+
 
 //Función para validar campo vacio
 //Función para validar inicio de sesión
