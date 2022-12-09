@@ -50,7 +50,7 @@ let deleteMotorista;
 //url la rutas de nuestro RestAPI
 //****OBTENER MOTORISTAS TODOS*****************************************************************
 const obtenerMotoristas = async ()=>{
-  const endpoint = 'http://localhost:3000/usuarios/';
+  const endpoint = 'http://localhost:3000/motoristas/';
    const result = await fetch (endpoint, 
     {
         method: 'GET',
@@ -64,7 +64,7 @@ const obtenerMotoristas = async ()=>{
 obtenerMotoristas();
 //****OBTENER MOTORISTA UNO*********************************************************************
 const obtenerMotorista = async (id) =>{//Función para obtener solo un usuario
-  const endpoint = 'http://localhost:3000/usuarios/';
+  const endpoint = 'http://localhost:3000/motoristas/';
     const result = await fetch (endpoint + id,//result almacena el resultado, +id es para concatenar
         {
         method: 'GET',
@@ -79,7 +79,7 @@ const obtenerMotorista = async (id) =>{//Función para obtener solo un usuario
 
 //****GUARDAR MOTORISTA (crear motorista)**********************************************************
 const guardarMotorista = async (usuario) =>{//Para guardar o crear es POST
-  const endpoint = 'http://localhost:3000/usuarios/';
+  const endpoint = 'http://localhost:3000/motoristas/';
     const result = await fetch (endpoint,
         {
             method: 'POST',
@@ -96,7 +96,7 @@ const guardarMotorista = async (usuario) =>{//Para guardar o crear es POST
 
 //****ACTUALIZAR MOTORISTA ***********************************************************************
 const actualizarMotorista = async (usuario, id) =>{//Para actualizar es PUT
-  const endpoint = 'http://localhost:3000/usuarios/';
+  const endpoint = 'http://localhost:3000/motoristas/';
     const result = await fetch (endpoint + id,
         {
             method: 'PUT',
@@ -114,7 +114,7 @@ const actualizarMotorista = async (usuario, id) =>{//Para actualizar es PUT
 
 //****ELIMINAR MOTORISTA*************************************************************************
 const eliminarMotorista = async (id) =>{//Para eliminar es DELETE
-  const endpoint = 'http://localhost:3000/usuarios/';
+  const endpoint = 'http://localhost:3000/motoristas/';
     const result = await fetch (endpoint + id,
         {
             method: 'DELETE',
