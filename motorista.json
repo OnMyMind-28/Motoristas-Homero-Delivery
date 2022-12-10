@@ -1,44 +1,4 @@
-/*{
-    "idMotorista":"1",
-    "nombreMotorista": "Antonio",
-    "apellidoMotorista": "Madrid",
-    "mail": "antoniomadrid@gmail.com",
-    "password": "1Anto",
-  
-    "pedidos": [{
-        "numeroPedido": "1",
-        "puntoRetiro": "Lorem djcnj",
-        "puntoEntrega": "Lorem jvskjav",
-        "detalleRetiro": "Bulevar",
-        "detalleEntrega": "Avenida",
-        "detalleOrde": "Combo Familiar Burger King"
-    }
 
-    ],
-  
-    "mapa":[{
-        "miUbicacion": "Cabañas"
-    }],
-     "historialEntregas": [{
-        "numeroTransaccion": "1",
-        "icono": "fa-solid fa-user-group ",
-        "horaDeEntrega": "1000"
-    },
-        {
-            "numeroTrasaccion": "2",
-            "horaDeEntrega": "0800"
-            
-        }
-    ],
-   
-    "caja":[{
-        "pago": "1",
-        "monto": 50,
-        "fecha": "15/10/2022",
-        "montoPropina": 25,
-        "totalPago": 985
-    }]
-}*/
 {
     "_id": {
       "$oid": "6389a0c506a0d9b74037a1b8"

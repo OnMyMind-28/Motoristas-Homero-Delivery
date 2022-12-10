@@ -33,102 +33,15 @@
   }];*/
 
 //Local Storage Usuarios
-var localStorageMotorista = window.localStorage;
+/*var localStorageMotorista = window.localStorage;
 
 
 if(localStorageMotorista.getItem('motorista')==null){
     localStorage.setItem('motorista', JSON.stringify(motorista));
 } else {
     motorista = JSON.parse(localStorageMotorista.getItem('motorista'))
-}
+}*/
 /******************************************************************************************************************* */
-let getMotoristas;
-let getMotorista;
-let postMotorista;
-let putMotorista;
-let deleteMotorista;
-//url la rutas de nuestro RestAPI
-//****OBTENER MOTORISTAS TODOS*****************************************************************
-const obtenerMotoristas = async ()=>{
-  const endpoint = 'http://localhost:3000/motoristas/';
-   const result = await fetch (endpoint, 
-    {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    });
-    getMotoristas= await result.json();
-   // console.log('Motorista', resultJSON);
-};
-obtenerMotoristas();
-//****OBTENER MOTORISTA UNO*********************************************************************
-const obtenerMotorista = async (id) =>{//Función para obtener solo un usuario
-  const endpoint = 'http://localhost:3000/motoristas/';
-    const result = await fetch (endpoint + id,//result almacena el resultado, +id es para concatenar
-        {
-        method: 'GET',
-        
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    getMotorista = await result.json();
-    //console.log('Motorista: ', resultJSON);
-}
-
-//****GUARDAR MOTORISTA (crear motorista)**********************************************************
-const guardarMotorista = async (usuario) =>{//Para guardar o crear es POST
-  const endpoint = 'http://localhost:3000/motoristas/';
-    const result = await fetch (endpoint,
-        {
-            method: 'POST',
-        
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(usuario) //Es lo que recibiria el backend para guardarlo en Mongodb
-            //Para que sea valido nuestro JSON hay que parsearlo con *JSON.stringify*
-        });
-        postMotorista = await result.json();
-        //console.log('Motorista guardado: ', resultJSON);
-};
-
-//****ACTUALIZAR MOTORISTA ***********************************************************************
-const actualizarMotorista = async (usuario, id) =>{//Para actualizar es PUT
-  const endpoint = 'http://localhost:3000/motoristas/';
-    const result = await fetch (endpoint + id,
-        {
-            method: 'PUT',
-        
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(usuario) //Es lo que recibiria el backend para guardarlo en Mongodb
-            //Para que sea valido nuestro JSON hay que parsearlo con *JSON.stringify*
-        });
-        putMotorista = await result.json();
-       // console.log('Motorista actualizado: ', resultJSON);
-};
-
-
-//****ELIMINAR MOTORISTA*************************************************************************
-const eliminarMotorista = async (id) =>{//Para eliminar es DELETE
-  const endpoint = 'http://localhost:3000/motoristas/';
-    const result = await fetch (endpoint + id,
-        {
-            method: 'DELETE',
-        
-            headers: {
-                'Content-Type': 'application/json'
-            },
-           
-        });
-        deleteMotorista = await result.json();
-       console.log('Motorista eliminado: ', resultJSON);
-};
-//eliminarMotorista('6382bd062df5e1ec1c531892');
-/************************************************************************************************************************* */
 
 /************************************************************************************************************************ */
 //Ventana modal formulario inicio sesión
@@ -368,6 +281,8 @@ function seleccionarOpcion(opcion){
     }
 }
 seleccionarOpcion();
+//
+
 /******************************************************************************************************************** */
 //Funciones para genera el contenido de la app
 //Genera el contenido de la pestaña pedidos
@@ -499,7 +414,7 @@ function OpcionesSubmenu (opcionSubmenu){
 }
 /***************************************************************************************************************** */
 function generaContPedidos(){
-    let pedido = motorista;
+;
     document.getElementById ('cont1-pedidos').innerHTML += `
     <div class="btn-rechazo">
     <h6>Nuevo pedido</h6>
@@ -516,7 +431,7 @@ function generaContPedidos(){
     </div>
     
     `//En el button aceptar agreagremos una modal la cual nos pedira la confirmación de retiro del pedido
-}generaContPedidos()
+}generaContPedidos();
 
 function pedidoAceptado(){
     document.getElementById('cont3-pedidos').innerHTML += `
